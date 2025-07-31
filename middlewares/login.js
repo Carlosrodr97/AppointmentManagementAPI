@@ -1,7 +1,6 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { jwt_key } from "../config/config.js";
 
 // Middleware para verificar si el usuario está autenticado
 export const authenticateUser = async (req, res) => {
@@ -29,7 +28,7 @@ export const authenticateUser = async (req, res) => {
         role: user[0].role,
         phone: user[0].phone,
       },
-      jwt_key,
+      process.env.JWT_KEY,
       { expiresIn: "12h" }
     ); // Generar un token JWT
 

@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import { jwt_key } from '../config/config.js';
 
 // Middleware para verificar el token JWT
 export const verifyToken = (req, res, next) => {
@@ -16,8 +15,8 @@ export const verifyToken = (req, res, next) => {
       return res.status(401).json({ error: 'Token requerido' });
     } // Verificar que el token no esté vacío
 
-    const decoded = jwt.verify(token, jwt_key); // Verificar el token
-    
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verificar el token
+
     req.user = decoded; // Agregar la información del usuario al request
     
     next(); // Continuar con el siguiente middleware o ruta
