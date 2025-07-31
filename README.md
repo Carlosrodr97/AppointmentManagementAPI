@@ -21,7 +21,7 @@ API RESTful para la gestión de citas, usuarios, disponibilidades y tipos de cit
 
 1. **Clona el repositorio:**
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/Carlosrodr97/AppointmentManagementAPI.git
    cd AppointmentManagementAPI
    ```
 
